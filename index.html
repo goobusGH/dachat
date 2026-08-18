@@ -125,3 +125,323 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>だちゃっと — DaChat</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ==================== -->
+    <!-- AUTH SCREEN -->
+    <!-- ==================== -->
+
+    <div id="auth-screen" class="auth-screen">
+
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                <div class="logo-japanese">
+                    だちゃっと
+                </div>
+
+                <div class="logo-english">
+                    DaChat
+                </div>
+            </div>
+
+            <h1 id="auth-title">
+                Welcome back!
+            </h1>
+
+            <p id="auth-subtitle">
+                Log in to continue to DaChat.
+            </p>
+
+
+            <!-- AUTH TABS -->
+
+            <div class="auth-tabs">
+
+                <button
+                    id="login-tab"
+                    class="auth-tab active"
+                    type="button"
+                >
+                    Log In
+                </button>
+
+                <button
+                    id="signup-tab"
+                    class="auth-tab"
+                    type="button"
+                >
+                    Sign Up
+                </button>
+
+            </div>
+
+
+            <!-- USERNAME -->
+            
+            <div
+                id="username-container"
+                class="input-container hidden"
+            >
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="Choose a username"
+                    maxlength="30"
+                    autocomplete="username"
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="input-container">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-container">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Your password"
+                    autocomplete="current-password"
+                >
+
+            </div>
+
+
+            <button
+                id="auth-button"
+                class="auth-button"
+                type="button"
+            >
+                Log In
+            </button>
+
+
+            <p
+                id="auth-message"
+                class="auth-message"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- MAIN APP -->
+    <!-- ==================== -->
+
+    <div
+        id="app"
+        class="app hidden"
+    >
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <div class="logo-japanese">
+                    だちゃっと
+                </div>
+
+                <div class="logo-english">
+                    DaChat
+                </div>
+
+            </div>
+
+
+            <div class="server-section">
+
+                <button
+                    class="nav-item active"
+                    data-view="global"
+                >
+                    <span>🌎</span>
+                    Global Chat
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-view="dms"
+                >
+                    <span>💬</span>
+                    Direct Messages
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-view="groups"
+                >
+                    <span>👥</span>
+                    Groups
+                </button>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="user-card">
+
+                    <div
+                        id="user-avatar"
+                        class="avatar"
+                    >
+                        ?
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong id="current-username">
+                            User
+                        </strong>
+
+                        <span>
+                            Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="logout-button"
+                    class="logout-button"
+                >
+                    Log Out
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main">
+
+            <header class="chat-header">
+
+                <div>
+
+                    <h1>
+                        <span>#</span>
+                        Global Chat
+                    </h1>
+
+                    <p>
+                        Talk with everyone on DaChat
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <section
+                id="messages"
+                class="messages"
+            >
+
+                <div class="welcome">
+
+                    <div class="welcome-icon">
+                        💬
+                    </div>
+
+                    <h2>
+                        Welcome to DaChat!
+                    </h2>
+
+                    <p>
+                        This is the beginning of the Global Chat.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <form
+                id="message-form"
+                class="message-form"
+            >
+
+                <input
+                    id="message-input"
+                    type="text"
+                    placeholder="Message Global Chat..."
+                    maxlength="1000"
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
